@@ -1,5 +1,5 @@
 ---
-name: "[branch_name] #issue_number title"
+name: title
 about: feature
 title: ''
 labels: ''
