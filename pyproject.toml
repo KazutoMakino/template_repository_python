@@ -2,9 +2,9 @@
 name = "template-repository-python"
 version = "0.1.0"
 description = ""
-authors = ["Kazuto Makino <55287424+KazutoMakino@users.noreply.github.com>"]
+authors = ["Kazuto Makino"]
 readme = "README.md"
-packages = [{include = "template_repository_python"}]
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
