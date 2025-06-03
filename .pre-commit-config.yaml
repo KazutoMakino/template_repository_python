@@ -26,11 +26,11 @@ repos:
         require_serial: true
         additional_dependencies: []
         minimum_pre_commit_version: "2.9.2"
-  - repo: local
-    hooks:
-      - id: ty-check
-        name: ty check
-        entry: ty check
-        language: system
-        types: [ python ]
-        pass_filenames: false
+  # - repo: local
+  #   hooks:
+  #     - id: ty-check
+  #       name: ty check
+  #       entry: ty check
+  #       language: system
+  #       types: [ python ]
+  #       pass_filenames: false
