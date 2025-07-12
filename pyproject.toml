@@ -14,24 +14,22 @@ dependencies = [
 
 [tool.ruff]
 lint.select = [
+    "I", # isort
     "F", # pyflakes
     "E", # pycodestyle
     "W", # pycodestyle warnings
-    "I", # isort
     "D", # pydocstyle
 ]
 lint.ignore = []
-
 lint.extend-ignore = [
+    "D103", # Missing docstring in public function
     "D104", # Missing docstring in public package
     "D105", # undocumented-magic-method
     "D107", # undocumented-public-init
     "D205", # blank-line-after-summary
-    "D415" # ends-in-punctuation
+    "D415", # ends-in-punctuation
+    "E501" # Line too long
 ]
-# 1行の最大文字数
-line-length = 88
-# 除外するファイルやディレクトリ
 lint.exclude = [
     ".bzr",
     ".direnv",
@@ -50,11 +48,38 @@ lint.exclude = [
     "node_modules",
     "venv",
 ]
+line-length = 120
+
 [tool.ruff.lint.pydocstyle]
-# docstringはgoogle style
 convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
-# 個別設定
-# __init__.pyは未使用インポートを許容
 "__init__.py" = ["F401"]
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+show_column_numbers = true
+show_error_context = true
+strict = false
+warn_redundant_casts = true
+disable_error_code = [
+    "no-redef",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    'lightgbm',
+    'optuna',
+    'polars',
+    'pytz',
+    'psutil',
+    'requests/*',
+    'tensorflow',
+    'torch',
+    'transformers',
+    'xgboost',
+]
+ignore_missing_imports = true
+ignore_errors = true
