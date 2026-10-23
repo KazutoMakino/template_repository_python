@@ -3,14 +3,14 @@ name = "template-repository-python"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.14.9"
 dependencies = [
     "bandit>=1.9.4",
     "isort>=8.0.1",
     "pre-commit>=4.6.0",
     "ruff>=0.15.22",
     "ty>=0.0.61",
-    "uv>=0.11.29",
+    "uv>=0.13.4",
 ]
 
 [tool.ruff]
@@ -80,3 +80,11 @@ allowed-unresolved-imports = [
 
 [tool.bandit]
 exclude_dirs = ["tests", ".venv"]
+
+[dependency-groups]
+dev = [
+    "certifi>=2026.10.23",
+    "pip>=26.2.2",
+    "pip-audit>=2.10.1",
+    "uv>=0.13.4",
+]
